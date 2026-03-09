@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,11 +20,16 @@
             <p>¿Cuál es el juego de bloques más famoso del mundo?</p>
             <p>¿En qué año salió oficialmente?</p>
             <p>¿Cómo se llama el enemigo verde que explota?</p>
-            <form action="reto2.html" method="GET">
+            <form action="../proc/res.proc.php" method="POST">
+
                 <input type="text" name="juego" placeholder="Nombre del juego">
                 <input type="number" name="anio" placeholder="Año de salida">
                 <input type="text" name="personaje" placeholder="Nombre del personaje">
-                <button type="submit" class="boton">Comprobar</button>
+                <button type="submit" name="reto1" class="boton">Comprobar</button>                
+
+<?php if (isset($_GET['msg'])) { echo '<p id="msg">' . $_GET['msg'] . '</p>'; } ?>
+
+
             </form>
         </div>
     </div>

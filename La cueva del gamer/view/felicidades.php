@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if (!($_SESSION["congratulations"] == 'check')) {
+
+    header("Location: ../index.php");
+
+    exit();
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +27,8 @@
             <h1>Felicidades!</h1>
             <p>Has superado todos los retos.</p>
             <p>Eres un verdadero Gamer.</p>
-            <a href="../index.html" class="boton">Volver al inicio</a>
+            <a href="../proc/replay.proc.php" class="boton">Volver al inicio</a>    
+
         </div>
     </div>
 </body>

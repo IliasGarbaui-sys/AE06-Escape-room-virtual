@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if (!($_SESSION["reto1"] == 'check')) {
+
+    header("Location: ../index.php");
+
+    exit();
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,11 +28,16 @@
             <p>¿Cómo se llama la consola rival de Xbox?</p>
             <p>¿Qué empresa la fabrica?</p>
             <p>¿Cuántos botones de formas tiene el mando? (triángulo, cruz, círculo...)</p>
-            <form action="reto3.html" method="GET">
+            <form action="../proc/res.proc.php" method="POST">             
+
                 <input type="text" name="consola" placeholder="Nombre de la consola">
                 <input type="text" name="empresa" placeholder="Empresa fabricante">
                 <input type="number" name="mando" placeholder="Número de botones de formas">
-                <button type="submit" class="boton">Comprobar</button>
+                <button type="submit" name="reto2" class="boton">Comprobar</button>      
+
+                <?php if (isset($_GET['msg'])) { echo '<p id="msg">' . $_GET['msg'] . '</p>'; } ?>
+
+
             </form>
         </div>
     </div>
